@@ -3,6 +3,7 @@ public class Problem_3 {
     // k reverse direction - ll
     // input - 1-2-3-4-5-6-7-8 , k = 3
     // output - 3-2-1-6-5-4-8-7
+    
 
     static void printList(Node head) {
         Node curr = head;
