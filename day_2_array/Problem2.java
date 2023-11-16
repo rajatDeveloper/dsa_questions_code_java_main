@@ -10,6 +10,39 @@ public class Problem2 {
 
     // optimal approuch
 
+    class Solution {
+
+        // optimal soln  
+        public int[][] merge(int[][] intervals) {
+    
+            //sort the intervals 
+           Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
+    
+            //now have onetravelsal 
+            
+            int start = intervals[0][0];
+            int end = intervals[0][1];
+
+            List<int[]> ans = new ArrayList<>();
+
+            for(int[] interval : intervals){
+                // (1, 2) (1, 8)
+                if(interval[0] <= end){
+                    end = Math.max(end, interval[1]);
+                }else{
+                    ans.add(new int[]{start, end});
+                    start = interval[0];
+                    end = interval[1];
+                }
+            }
+            ans.add(new int[]{start, end});
+
+            return ans.toArray(new int[ans.size()][]);
+        
+            
+        }
+    }
+
     static List<List<Integer>> mergeIntervals(int[][] arr) {
         List<List<Integer>> ans = new ArrayList<>();
 
