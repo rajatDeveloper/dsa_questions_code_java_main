@@ -1,7 +1,8 @@
 
 public class Problem_4 {
-    public int myAtio(String s){
-        s = s.strip();
+
+  public int myAtio(String s) {
+    s = s.strip();
     if (s.isEmpty())
       return 0;
 
@@ -15,7 +16,7 @@ public class Problem_4 {
       if (!Character.isDigit(c))
         break;
       num = num * 10 + (c - '0');
-      
+
       if (sign * num <= Integer.MIN_VALUE)
         return Integer.MIN_VALUE;
       if (sign * num >= Integer.MAX_VALUE)
@@ -23,5 +24,5 @@ public class Problem_4 {
     }
 
     return sign * (int) num;
-    }
+  }
 }
